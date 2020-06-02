@@ -1,0 +1,19 @@
+<div class="page">
+
+  <mat-grid-list [cols]="breakpoint" rowHeight="2:0.5" (window:resize)="onResize($event)">
+    <mat-grid-tile>
+
+      <h3>{{"briefcase.skills" | translate}}</h3>
+
+      <div class="skill" *ngFor="let skill of skills | async">
+        <h4 class="name-skill">{{skill.name}}</h4>
+        <span *ngFor="let part of skill.parts">{{part.name}}</span>
+      </div>
+
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <img src="" alt="">
+    </mat-grid-tile>
+  </mat-grid-list>
+
+</div>
