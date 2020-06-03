@@ -1,4 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'noto';
+  src: local('./assets/fonts/NotoSansJP-Regular.otf') format('opentype');
+}
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: 'noto', serif, Roboto, "Helvetica Neue", sans-serif; }
+
+
+/*********************
+BREAKPOINTS
+*********************/
+
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media (min-width: 70em) { @content ; }
+ }
+  @else if $point == laptop {
+    @media (min-width: 64em) { @content ; }
+ }
+   @else if $point == tablet {
+    @media (min-width: 50em) { @content ; }
+ }
+  @else if $point == phablet {
+    @media (min-width: 37.5em)  { @content ; }
+ }
+ @else if $point == mobileonly {
+    @media (max-width: 37.5em)  { @content ; }
+
+ }
+}
+

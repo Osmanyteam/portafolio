@@ -1,19 +1,96 @@
 <div class="page">
 
-  <mat-grid-list [cols]="breakpoint" rowHeight="2:0.5" (window:resize)="onResize($event)">
-    <mat-grid-tile>
+  <div class="container-fluid">
 
-      <h3>{{"briefcase.skills" | translate}}</h3>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">{{"briefcase.skills" | translate}}</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
 
-      <div class="skill" *ngFor="let skill of skills | async">
-        <h4 class="name-skill">{{skill.name}}</h4>
-        <span *ngFor="let part of skill.parts">{{part.name}}</span>
+    <div class="row">
+      <div class="col-lg-3" id="skills">
+        <h3>{{"briefcase.skills" | translate}}</h3>
+
+        <div class="skill" *ngFor="let skill of skills | async">
+          <h4 class="name-skill">{{skill.name}}</h4>
+          <span *ngFor="let part of skill.parts" (click)="selectProject(part)">{{part.name}}</span>
+        </div>
       </div>
+      <div class="col-12 col-lg-9" id="side-right">
+        <div class="row">
+          <div class="col-12" class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <h3>{{"briefcase.skills" | translate}}</h3>
 
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <img src="" alt="">
-    </mat-grid-tile>
-  </mat-grid-list>
+            <div class="skill" *ngFor="let skill of skills | async">
+              <h4 class="name-skill">{{skill.name}}</h4>
+              <span *ngFor="let part of skill.parts" (click)="selectProject(part)">{{part.name}}</span>
+            </div>
+          </div>
+
+          <div class="col-12 data-perfil">
+            <img src="./assets/photo_perfil.jpg" alt="osmany jiron">
+            <h1>Osmany Jiron</h1>
+            <a href="#">Bio</a>
+          </div>
+
+          <div class="col-12 projects" *ngFor="let project of selectedPart.projects">
+
+            <div class="row">
+              <div class="col-12 col-lg-6 carousel">
+                <h1>{{project.name}}</h1>
+                <p>{{project.description | limit:[250]}}</p>
+                <owl-carousel-o [options]="customOptions">
+                  <ng-container *ngFor="let img of project.images; let i=index;">
+                    <ng-template carouselSlide [id]="i">
+                      <img class="image-from-project" style="object-fit: cover;" height="250px" [src]="img" [title]="i" alt="image from {{project.name}}">
+                    </ng-template>
+                  </ng-container>
+                </owl-carousel-o>
+
+                <div class="links-technology">
+                  <div class="links" *ngIf="project.links&&project.links.length>0">
+                    <h4>Links:</h4>
+                    <a [href]="link.href" target="_black" *ngFor="let link of project.links">{{link.text}}</a>
+                  </div>
+                  <div class="technology">
+                    <span *ngFor="let technology of project.technology">{{technology}}</span>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="col-12 col-lg-6 details-projects">
+                <div class="item">
+                  <h4>{{'briefcase.enterprise.name' | translate}}</h4>
+                  <span>{{project.enterprise.name}}</span>
+                </div>
+                <div class="item">
+                  <h4>{{'briefcase.enterprise.period' | translate}}</h4>
+                  <span>{{project.enterprise.period}}</span>
+                </div>
+                <div class="item">
+                  <h4>{{'briefcase.enterprise.position' | translate}}</h4>
+                  <span>{{project.enterprise.position}}</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="footer">
+            <a href="tel:{{telephone}}">Tel: {{telephone}}</a>
+            <a href="mailto:{{mail}}">Email: {{mail}}</a>
+            <a href="{{github}}">GitHub: {{github}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
 
 </div>

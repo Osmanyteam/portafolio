@@ -5,6 +5,7 @@ import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-transla
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { DataService } from './data.service';
+import { LimitPipe } from './limit.pipe';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -23,11 +24,14 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     }),
   ],
-  declarations: [],
+  declarations: [
+    LimitPipe
+  ],
   exports: [
     MatGridListModule,
     HttpClientModule,
-    TranslateModule
+    TranslateModule,
+    LimitPipe
   ],
   providers: [
     DataService

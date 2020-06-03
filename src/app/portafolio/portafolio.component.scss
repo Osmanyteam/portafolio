@@ -1,0 +1,255 @@
+@import "../../styles.scss";
+$backgroundSideRightTop: #F4EFEF;
+
+nav {
+  margin-left: -15px;
+  margin-right: -15px;
+  @include breakpoint(tablet) {
+    display: none;
+  }
+}
+
+#navbarNavAltMarkup, #skills {
+  background-color: #D1D1D1;
+  h3, h4, span {
+    text-align: center;
+  }
+  h3{
+    font-size: 30px;
+    line-height: 30px;
+    margin: 15px 0;
+    @include breakpoint(tablet) {
+      margin-top: 50px;
+      font-size: 40px;
+      line-height: 40px;
+    }
+  }
+  h4 {
+    margin: 0 0 10px;
+    font-size: 25px;
+    line-height: 25px;
+    @include breakpoint(tablet) {
+      margin-top: 40px;
+      font-size: 35px;
+      line-height: 35px;
+    }
+  }
+  span{
+    margin: 0 0 5px;
+    font-size: 18px;
+    line-height: 18px;
+    display: block;
+    @include breakpoint(tablet) {
+      font-size: 25px;
+      line-height: 25px;
+    }
+  }
+}
+
+#navbarNavAltMarkup {
+  @include breakpoint(tablet) {
+    display: none;
+  }
+}
+
+#skills {
+  height: 100vh;
+  border-right: 1px solid #707070;
+}
+
+#side-right {
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.data-perfil{
+  padding: 15px 0 0;
+  padding-bottom: 15px;
+  background-color: $backgroundSideRightTop;
+  text-align: center;
+  @include breakpoint(tablet){
+    height: 200px;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    padding-top: 0;
+    img, h1, a {
+      display: inline-flex;
+    }
+  }
+  img{
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    @include breakpoint(tablet) {
+      margin: 0;
+    }
+  }
+  h1{
+    font-size: 35px;
+    line-height: 35px;
+    @include breakpoint(tablet){
+      font-size: 40px;
+      line-height: 40px;
+    }
+  }
+
+  a {
+    color: black;
+    text-decoration: underline;
+    @include breakpoint(tablet) {
+      margin-right: 45px;
+      font-size: 40px;
+      line-height: 40px;
+    }
+  }
+}
+
+.projects {
+  background-color: $backgroundSideRightTop;
+  padding: 30px 30px 0;
+  h1{
+    font-size: 35px;
+    line-height: 35px;
+    @include breakpoint(tablet){
+      font-size: 40px;
+      line-height: 40px;
+      margin-bottom: 15px;
+    }
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 18px;
+    margin-bottom: 25px;
+    text-align: justify;
+    @include breakpoint(tablet) {
+      font-size: 25px;
+      line-height: 30px;
+      margin-bottom: 30px;
+    }
+  }
+
+  .details-projects {
+    text-align: center;
+
+    @include breakpoint(tablet) {
+      text-align: center;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+    .item{
+      margin-bottom: 25px;
+      @include breakpoint(tablet) {
+        width: 100%;
+      }
+      h4 {
+        font-size: 25px;
+        line-height: 25px;
+        text-decoration: underline;
+        @include breakpoint(tablet){
+          font-size: 30px;
+          line-height: 30px;
+        }
+      }
+      span {
+        font-size: 18px;
+        line-height: 18px;
+        @include breakpoint(tablet){
+          font-size: 25px;
+          line-height: 25px;
+        }
+      }
+    }
+  }
+
+  .carousel {
+    .img-from-project{
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      @include breakpoint(tablet){
+        width: 250px;
+        height: 250px;
+      }
+    }
+  }
+
+  .links-technology {
+
+    .links{
+      h4 {
+        text-decoration: underline;
+        font-size: 20px;
+        line-height: 20px;
+        @include breakpoint(tablet) {
+          font-size: 25px;
+          line-height: 25px;
+        }
+      }
+      a {
+        color: #9A3D93;
+        font-size: 20px;
+        line-height: 20px;
+        margin-right: 15px;
+        text-decoration: underline;
+        @include breakpoint(tablet) {
+          font-size: 25px;
+          line-height: 25px;
+        }
+      }
+    }
+
+    .technology {
+      margin-top: 25px;
+      display: flex;
+      flex-wrap: wrap;
+      span {
+        margin-right: 15px;
+        margin-top: 10px;
+        background-color: #EAD6D6;
+        padding: 5px 10px;
+        border: 1px solid #707070;
+        border-radius: 10px;
+        font-size: 15px;
+        line-height: 15px;
+        color: #410000;
+        @include breakpoint(tablet) {
+          font-size: 18px;
+          line-height: 18px;
+        }
+      }
+    }
+
+  }
+}
+
+.footer {
+  background-color: $backgroundSideRightTop;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 35px;
+  padding-bottom: 10px;
+  width: 100%;
+  @include breakpoint(laptop) {
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 100px;
+  }
+  a {
+    margin-bottom: 15px;
+    width: 100%;
+    flex-basis: 100%;
+    text-align: center;
+    color: black;
+    @include breakpoint(laptop) {
+      width: auto;
+      display: inline-flex;
+      flex-basis: auto;
+    }
+  }
+}

@@ -1,5 +1,10 @@
 {
   "briefcase": {
-    "skills": "skills"
+    "skills": "skills",
+    "enterprise": {
+      "name": "Enterprise",
+      "period": "Period",
+      "position": "Position"
+    }
   }
 }
