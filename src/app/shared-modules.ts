@@ -41,6 +41,6 @@ export class SharedModule {
   constructor(
     translate: TranslateService
   ) {
-    translate.setDefaultLang('es');
+    translate.setDefaultLang('en');
   }
 }

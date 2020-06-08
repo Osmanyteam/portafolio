@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 export interface Project {
   name: string;
@@ -27,7 +28,9 @@ export type SkillsType = Array<SkillType>;
 })
 export class DataService {
 
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
   public getSkills(): Observable<SkillsType> {
     const skills: SkillsType = [

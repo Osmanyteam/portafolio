@@ -5,11 +5,13 @@ import { PortafolioRoutingModule } from './portafolio-routing.module';
 import { PortafolioComponent } from './portafolio.component';
 import { SharedModule } from '../shared-modules';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { BioComponent } from './bio/bio.component';
 
 
 @NgModule({
   declarations: [
-    PortafolioComponent
+    PortafolioComponent,
+    BioComponent
   ],
   imports: [
     CommonModule,
